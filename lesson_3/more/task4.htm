@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+  </head>
+  <body>
+	 <h2>Завдання 4</h2>
+    <p>
+       Морський бій. Ворожий корабель, може знаходитись в одному із квадратів (кількість квадратів вводиться з клавіатури), які розташовані лінійно (один за одним) на річці. 
+    </p>
+	 <p>
+		Гра відбувається за правилами: 
+1) якщо користувач стріляє у заданий квадрат (тобто вводиться номер квадрата), то корабель потоплено;
+2) якщо корабель знаходиться у сусідньому по відношенню до квадрата, де знаходиться корабель, то корабель пошкоджено (про це повідомляємо користувача).
+За два постріли спробувати потопити корабель.
+Задача 5. Модифікувати попередню задачу з можливістю після пострілу переміщення корабля у випадковим чином вибрану сусідню клітинку (якщо звичайно корабель не було потоплено за першим разом).
+Задача 6. Полювання. Заєць знаходиться у верхньому лівому кутку поля. Поле складається з двох рядків і двох стовпців.
+
+	 </p>
+  </body>
+    <script>
+      const minLengrhField = 0;
+		const maxLengrhField = parseInt(prompt('Введіть довжину поля'))
+		const positionShip = minLengrhField  + Math.floor(Math.random() * (maxLengrhField - minLengrhField  + 1));
+		console.log(positionShip);
+		const userShot = parseInt(prompt('Введіть куди бажаєте здійснити постріл'))
+
+		if(userShot === positionShip) alert('Ви вийграли!!!!')
+		else if(userShot === positionShip - 1 || userShot === positionShip + 1){ 
+			alert('Ви пошкодили корабель')
+			const userShot2 = parseInt(prompt('Введіть куди бажаєте здійснити постріл'))
+			if(userShot2 === positionShip) alert('Ви вийграли2')
+			else alert('Ви програли(')
+		}
+		else {
+			alert('Ви не влучили в корабель')
+			const userShot2 = parseInt(prompt('Введіть куди бажаєте здійснити постріл'))
+			if(userShot2 === positionShip) alert('Ви вийграли')
+			else alert('Ви програли(')
+		}
+    </script>
+  </body>
+</html>

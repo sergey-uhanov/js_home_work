@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="border: 1px solid #000" class="block">
+      <ol>
+        <li>Весулий</li>
+        <li>Сумний</li>
+        <li>Обурений</li>
+      </ol>
+    </div>
+  </body>
+  <script>
+    const userEmotion = parseInt(
+      prompt(
+        "вводить номер пункту меню і на екрані з’являється відповідне зображення смайла"
+      )
+    );
+    if (userEmotion === 1)
+      document.write(
+        '<img src="https://klike.net/uploads/posts/2019-09/1568622546_2.jpeg" alt="">'
+      );
+    else if (userEmotion === 2)
+      document.write(
+        '<img src="https://klike.net/uploads/posts/2019-09/1568622622_3.jpg" alt="">'
+      );
+    else document.write('<img src="img/0.jpg" alt="" />');
+  </script>
+</html>

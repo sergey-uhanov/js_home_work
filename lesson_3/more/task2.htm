@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <body>
+    <h2>Завдання 2</h2>
+    <p>
+      Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок
+      повинен знаходитися в межах від 1 до 100). Користувач вводить число і
+      виграє, якщо число знаходиться у цьому проміжку, або розташоване від нього
+      (від лівого або правого краю) не більше ніж на 10.
+    </p>
+  </body>
+  <script>
+    const userNum = parseInt(
+      prompt("Вгадайте число от 1 до 100 яке загадав компьютер", 50)
+    );
+    let min = 1,
+      max = 100,
+      randomMax,
+      randonMin;
+
+    let random1 = min + Math.floor(Math.random() * (max - min + 1));
+    let random2 = min + Math.floor(Math.random() * (max - min + 1));
+    if (random1 > random2) {
+      randomMax = random1;
+      randonMin = random2;
+    } else {
+      randomMax = random2;
+      randonMin = random1;
+    }
+    console.log(randomMax);
+    console.log(randonMin);
+
+    if (randonMin - 10 < userNum && randomMax + 10 > userNum)
+      alert("Ви вийграли!!!");
+    else alert("Невгадали");
+  </script>
+</html>

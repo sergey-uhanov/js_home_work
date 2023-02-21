@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <h1>Завдання №1</h1>
+    <p>
+      З клавіатури вводяться імена двох дітей та кількість у них цукерок.
+      Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або
+      вивести, що кількість однакова.
+    </p>
+    <script>
+      const nameKid1 = prompt("Введіть ім'я першої дитини:", "Олеся");
+      const qualityCandyKid1 = parseInt(
+        prompt(`Скільки цукерок має ${nameKid1}`, 0) // Дайте будь ласка фитбєк, цю строку ломає плагін prettier- code formatter. Як краще для читабельності?
+      );
+
+      const nameKid2 = prompt("Введіть ім'я другої дитини:", "Василь");
+      const qualityCandyKid2 = parseInt(
+        prompt(`Скільки цукерок має ${nameKid2}`, 0)
+      );
+      let winer;
+
+      if (qualityCandyKid1 > qualityCandyKid2) winer = qualityCandyKid1;
+      else if (qualityCandyKid1 < qualityCandyKid2) winer = qualityCandyKid2;
+      else winer = "Кількість цукерок однакова";
+      alert(winer);
+    </script>
+  </body>
+</html>

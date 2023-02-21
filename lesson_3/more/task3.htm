@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+  </head>
+  <body>
+    <h2>Завдання 3</h2>
+    <p>
+      Комп’ютер загадує число від 1 до 10. Двоє користувачів надають свої
+      відповіді. Виграє той, у кого число знаходиться ближче до загаданого
+      комп’ютером числа.
+    </p>
+    <script>
+      const userNum1 = parseInt(prompt("Перший гравець, введіть число:"));
+      const userNum2 = parseInt(prompt("Другий гравець, введіть число:"));
+      let min = 0;
+      let max = 10;
+      const randomNum = min + Math.floor(Math.random() * (max - min + 1));
+
+      let intermediateValueUser1 = Math.abs(randomNum - userNum1);
+      let intermediateValueUser2 = Math.abs(randomNum - userNum2);
+
+      console.log(randomNum);
+      console.log(intermediateValueUser1);
+      console.log(intermediateValueUser2);
+
+      alert("Бажаете дізнатися хто переміг?");
+
+      if (intermediateValueUser1 < intermediateValueUser2)
+        alert("Переміг перший гравець");
+      else alert("Переміг другий гравець");
+    </script>
+  </body>
+</html>
