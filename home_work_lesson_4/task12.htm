@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 12</title>
+  </head>
+  <body>
+    <h1>Задача 12</h1>
+    <p>
+      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у
+      кожній позиції вибирається як одне з чотирьох зображень. Вивести ці
+      зображення і повідомити виграш користувача (три перших зображення 100 грн,
+      три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+      Використати цикли і switch (для вибору зображення за номером).
+    </p>
+    <!-- <script>
+      let min = 1;
+      let max = 4;
+      let win;
+      let randomimg1 = min + Math.floor(Math.random() * (max - min + 1));
+      let randomimg2 = min + Math.floor(Math.random() * (max - min + 1));
+      let randomimg3 = min + Math.floor(Math.random() * (max - min + 1));
+
+      if (
+        randomimg1 == randomimg2 &&
+        randomimg2 == randomimg3 &&
+        randomimg3 == 1
+      )
+        win = 100;
+      else if (
+        randomimg1 == randomimg2 &&
+        randomimg2 == randomimg3 &&
+        randomimg3 == 2
+      )
+        win = 200;
+      else if (
+        randomimg1 == randomimg2 &&
+        randomimg2 == randomimg3 &&
+        randomimg3 == 3
+      )
+        win = 500;
+      else if (
+        randomimg1 == randomimg2 &&
+        randomimg2 == randomimg3 &&
+        randomimg3 == 4
+      )
+        win = 1000;
+      else win = 0;
+
+      document.write(`<img src="/img/${randomimg1}.jpg" alt="" />`);
+      document.write(`<img src="/img/${randomimg2}.jpg" alt="" />`);
+      document.write(`<img src="/img/${randomimg3}.jpg" alt="" />`);
+      document.write(`Ви виграли ${win} гр.`);
+    </script> -->
+    <script>
+      let slot1, slot2, slot3, img1, img2, img3, win;
+      for (let i = 0; i < 3; i++) {
+        let min = 1;
+        let max = 4;
+        let random = min + Math.floor(Math.random() * (max - min + 1));
+        switch (i) {
+          case 0:
+            slot1 = random;
+
+            break;
+          case 1:
+            slot2 = random;
+            break;
+          default:
+            slot3 = random;
+            break;
+        }
+      }
+      switch (slot1) {
+        case 1:
+          img1 = '<img src="/img/1.jpg" alt="">';
+          break;
+        case 2:
+          img1 = '<img src="/img/2.jpg" alt="">';
+          break;
+        case 3:
+          img1 = '<img src="/img/3.jpg" alt="">';
+          break;
+
+        default:
+          img1 = '<img src="/img/4.jpg" alt="">';
+          break;
+      }
+      switch (slot2) {
+        case 1:
+          img2 = '<img src="/img/1.jpg" alt="">';
+          break;
+        case 2:
+          img2 = '<img src="/img/2.jpg" alt="">';
+          break;
+        case 3:
+          img2 = '<img src="/img/3.jpg" alt="">';
+          break;
+
+        default:
+          img2 = '<img src="/img/4.jpg" alt="">';
+          break;
+      }
+      switch (slot3) {
+        case 1:
+          img3 = '<img src="/img/1.jpg" alt="">';
+          break;
+        case 2:
+          img3 = '<img src="/img/2.jpg" alt="">';
+          break;
+        case 3:
+          img3 = '<img src="/img/3.jpg" alt="">';
+          break;
+
+        default:
+          img3 = '<img src="/img/4.jpg" alt="">';
+          break;
+      }
+      document.write(img1);
+      document.write(img2);
+      document.write(img3);
+
+      if (slot1 == slot2 && slot2 == slot3 && slot3 == 1) win = 100;
+      else if (slot1 == slot2 && slot2 == slot3 && slot3 == 2) win = 200;
+      else if (slot1 == slot2 && slot2 == slot3 && slot3 == 3) win = 500;
+      else if (slot1 == slot2 && slot2 == slot3 && slot3 == 4) win = 1000;
+      else win = 0;
+
+      document.write(`Ви виграли ${win} гр.`);
+    </script>
+  </body>
+</html>

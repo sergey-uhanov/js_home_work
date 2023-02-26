@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 13</title>
+  </head>
+  <body>
+    <h1>Задача 13</h1>
+    <p>
+      Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі
+      розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+    </p>
+    <script>
+      let positionIndicator;
+      let min = 1;
+      let maxN = parseInt(prompt("Введітть довжина поля: "));
+      let maxM = parseInt(prompt("Введітть ширину поля: "));
+      let pcPositionHorizon =
+        min + Math.floor(Math.random() * (maxN - min + 1));
+      let pcPositionVertical =
+        min + Math.floor(Math.random() * (maxM - min + 1));
+      numShots = parseInt(prompt("Введіть кількість пострілів:"));
+      console.log(pcPositionHorizon);
+      console.log(pcPositionVertical);
+
+      for (let i = 0; i < numShots; i++) {
+        let shotN = parseInt(
+          prompt("Введітть куди здійснити пострил по горизонталі: ")
+        );
+        let shotM = parseInt(
+          prompt("Введітть куди здійснити пострил по вертікалі: ")
+        );
+        if (shotN == pcPositionHorizon && shotM == pcPositionVertical) {
+          alert("Ви влучили");
+          positionIndicator = "Ви перемогли";
+          break;
+        } else {
+          alert("Ви не влучили");
+          positionIndicator = "Ви програли";
+        }
+      }
+      alert(positionIndicator);
+    </script>
+  </body>
+</html>

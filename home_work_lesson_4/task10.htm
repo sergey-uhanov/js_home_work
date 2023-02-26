@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 10</title>
+  </head>
+  <body>
+    <h1>Задача 10</h1>
+    <p>
+      Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем
+      числами.
+    </p>
+    <script>
+      let userMinValue = parseInt(prompt("Введіть початкове значення:"));
+      const userMaxValue = parseInt(prompt("Введіть кінцеве значення:"));
+      let sum = 0;
+
+      for (let i = userMinValue; i <= userMaxValue; i++) {
+        if (i % 2 !== 0) {
+          sum += i;
+        }
+      }
+      document.write(
+        `<h3>Cума всіх непарних чисел, що знаходяться між заданими користувачем числами дорівнює ${sum}</h3>`
+      );
+    </script>
+  </body>
+</html>
