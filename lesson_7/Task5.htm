@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+
+</head>
+<body>
+		<h1>Задача 5</h1>
+	<p>Створити окремі функції, які переводять:
+
+</p>
+<ol>
+	<li>Сантиметри у дюйми;</li>
+	<li>Кілограми у фунти;</li>
+	<li>Кілометри у милі;</li>
+</ol>
+<script>
+	const userChoice = parseInt(prompt('Оберіть що бажаєте  ( 1-Сантиметри у дюйми, 2-Кілограми у фунти, 3-Кілометри у милі)'))
+	switch (userChoice) {
+			case 1: const userCentimetr = parseFloat(prompt('Введіть кількість сантиметрив які ви бажаете перевести у дюйми'))
+			alert(`${userCentimetr} сантіметрів дорівнюе ${getCentimeterToInch(userCentimetr)} дюймів`)
+			break;
+			case 2:	const userKilog = parseFloat(prompt('Введіть кількість кілограмів які ви бажаете перевести у фунти'))
+			alert(`${userKilog} кілограмів дорівнюе ${getKiloToPound(userKilog)} фунтів`)		
+			break;
+			case 3:	const userKilometr = parseFloat(prompt('Введіть кількість кілометрів які ви бажаете перевести у милі'))	
+			alert(`${userKilometr} кілометрів дорівнює ${getKilomToMile(userKilometr)} миль`)	
+			break;
+	
+		default: 
+			break;
+	}
+function getCentimeterToInch(centimeter) {
+	return (centimeter / 2.54).toFixed(1)
+}
+function getKiloToPound(kilog) {
+	return (kilog / 2.20462262).toFixed(1)
+}
+function getKilomToMile(kilometer) {
+	return (kilometer / 1.6).toFixed(1)
+}
+
+</script>
+</body>
+</html>

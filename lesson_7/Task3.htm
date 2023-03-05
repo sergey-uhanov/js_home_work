@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+<body>
+	<h1>Задача 3</h1>
+	<p> Створити окремі функції, які для 4 чисел знаходять:
+</p>
+<ol>
+	<li>суму;</li>
+	<li>добуток;</li>
+	<li>середнє арифметичне;</li>
+	<li>мінімальне значення.</li>
+</ol>
+<script>
+	const userNum1 = parseInt(prompt('Введіть перше число'))
+	const userNum2 = parseInt(prompt('Введіть друге число'))
+	const userNum3 = parseInt(prompt('Введіть третє число'))
+	const userNum4 = parseInt(prompt('Введіть четверте число'))
+
+function getSum(num1, num2, num3, num4) {
+	return num1 + num2 + num3 + num4
+}
+function getMulti(num1, num2, num3, num4) {
+	return  num1 * num2 * num3 * num4
+}
+function getMid(num1, num2, num3, num4) {
+	return  (num1 + num2 + num3 + num4) / 4
+}
+function getMin(num1, num2, num3, num4) {
+	return  Math.min(num1, num2, num3, num4)
+}
+alert(`Сума ваших чисел ${ getSum( userNum1, userNum2, userNum3, userNum4)} `)
+alert(`Добуток ваших чисел ${ getMulti( userNum1, userNum2, userNum3, userNum4)} `)
+alert(`Середнє арифметичне ваших чисел ${ getMid( userNum1, userNum2, userNum3, userNum4)} `)
+alert(`Мінімальне значенн ваших чисел ${ getMin( userNum1, userNum2, userNum3, userNum4)} `)
+</script>
+</body>
+</html>

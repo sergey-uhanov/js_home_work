@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 6</title>
+	<style>
+		table,tr,td{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+		<h1>Задача 6</h1>
+	<p>Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
+</p>
+<script>	
+const userRows =  parseInt(prompt('Введіть кількість строк'))
+const userColm =  parseInt(prompt('Введіть кількість колонок'))
+
+
+
+
+function getTable(row,colm) {
+	let table = document.createElement('table')
+for (let i = 0; i < row; i++) {
+	let newRow = document.createElement('tr')
+	for (let j = 0; j < colm; j++) {
+		let newColumn = document.createElement('td')
+		let text = document.createTextNode('Я очень долго решал эту задачу')
+		newColumn.appendChild(text)
+		newRow.appendChild(newColumn)
+	}
+	table.appendChild(newRow)
+}
+return document.body.appendChild(table)
+}
+
+
+
+getTable(userRows, userColm)
+
+
+// let table = document.createElement('table')
+// let row = document.createElement('tr')
+// table.appendChild(row)
+// document.body.appendChild(table)
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

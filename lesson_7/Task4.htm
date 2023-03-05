@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+<body>
+	<h1>Задача 4</h1>
+	<p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+</p>
+<script>
+	const userNum1 = parseInt(prompt('Введіть перше число'))
+	const userNum2 = parseInt(prompt('Введіть друге число'))
+	const userNum3 = parseInt(prompt('Введіть третє число'))
+	function myFoo(num1, num2, num3) {
+		let pairedNum = 0 
+		if(num1 == num2)
+			pairedNum ++
+		if(num1 === num3)
+			pairedNum ++
+		if(num2 === num3)
+			pairedNum ++
+		
+			let positiveNum = 0
+			if(num1 > 0)
+			positiveNum++
+			if(num2 > 0)
+			positiveNum++
+			if(num3 > 0)
+			positiveNum++
+
+			let moreHundred = 0
+			if(num1 > 100)
+			moreHundred++
+			if(num2 > 100)
+			moreHundred++
+			if(num3 > 100)
+			moreHundred++
+			return `<h1>Кількість парних дорівнює ${pairedNum}<br>
+				Кількість доданих дорівнює ${positiveNum}<br>
+				Кількість більше 100 дорівнює ${moreHundred}</h1>`
+		}
+	
+	document.write(myFoo(userNum1, userNum2, userNum3))
+	
+</script>
+</body>
+</html>
