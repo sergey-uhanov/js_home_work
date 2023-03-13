@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 9</h1>
+	<p>ДМорський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. 
+		Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+	</p>
+	<script>
+		//Принимаем данные от пользователя
+		let UserLengthBattleField = parseInt(prompt('Введіть довжину поля'))
+		let ValueShips = parseInt(prompt('Введіть кількість кораблів'))
+		// создаем масив нужной длинны
+let arrBattleField = new Array(UserLengthBattleField)
+console.log(arrBattleField);
+// заполняем нолями
+arrBattleField.fill(0)
+console.log(arrBattleField);
+
+// раставляем корабли
+
+for (let i = 0; i < ValueShips; i++) {
+		const min = 0;
+      const max = arrBattleField.length - 1;
+      const random = min + Math.floor(Math.random() * (max - min + 1));
+	arrBattleField[random] = 1	
+}
+console.log(arrBattleField);
+
+// начинаем играть
+do {
+	let userShot = parseInt(prompt('Куді бажаєте здійснити постріл'))	
+		if (arrBattleField[userShot] === 1) {
+			arrBattleField[arrBattleField.indexOf(1)] = 0
+			alert('Ви попали')
+		}
+} while (arrBattleField.indexOf(1) != -1);
+
+alert('Ви виграли')
+	</script>
+</body>
+</html>

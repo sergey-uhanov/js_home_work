@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 8</h1>
+	<p>Дано одновимірний масив, у якому зберігається певна виграшна сума 
+		(елементи заповнюються випадковим чином значеннями від -500 до 500). 
+		Надаючи користувачу можливість вибирати номери елементів  (поки він не відмовиться). Знаходити сумарний виграш.
+	</p>
+	<script>
+		//генерируем васив длинной в 100 элементов
+		let arrWinValues = []
+		function getWinsValues() {
+		const min = -500;
+      const max = 500;
+      const random = min + Math.floor(Math.random() * (max - min + 1));
+			arrWinValues.push(random)
+		}
+
+		for (let i = 0; i < 100; i++) {
+			getWinsValues()
+			
+		}
+		console.log(arrWinValues);
+		
+
+		//циклически принимаем от пользователя номер элемента
+let arrUserValues = []
+		do {
+			let userChioceElement = prompt('Введіть номер єлемента:')
+			if (userChioceElement != null) {
+				alert(`Ви виграли ${arrWinValues[userChioceElement]}`)
+				userChioceElement = parseInt(userChioceElement)
+				arrUserValues.push(arrWinValues[userChioceElement])				
+			} else {
+				break
+			}
+		} while (true);
+//ноходим сумму выигрыша
+		let sumWins = 0
+		for (const iterator of arrUserValues) {
+			sumWins += iterator
+		}
+//выводим на экран сумму выигрыша
+		document.write(`${sumWins}`)
+	</script>
+</body>
+</html>

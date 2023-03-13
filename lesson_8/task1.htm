@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він 
+		відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+	</p>
+<script>
+
+
+// найти средний бал
+
+// определить к какой категории относится
+
+const numItems = parseInt(prompt('Вкажіть кількість предметів'))
+
+function getArrScore (numItems){
+	let arrScore = []
+	for (let i = 1; i <= numItems; i++) {
+		let score = parseInt(prompt(`Вкажіть оцінку з ${i} предмету`))
+		arrScore.push(score)
+	}
+	return arrScore
+}
+
+let arrScore = getArrScore(numItems)
+
+function getMidScore(arrScore) {
+	let sumScore = 0
+for (let i = 0; i < arrScore.length; i++) {
+	sumScore += arrScore[i]	
+}
+	let midScore = sumScore / arrScore.length
+	return midScore
+}
+
+let midScore = getMidScore(arrScore)
+
+
+
+function getMinScore(arrScore) {
+	let minScore = 5
+	for (let i = 0; i < arrScore.length; i++) {
+		if(minScore > arrScore[i])
+		minScore = arrScore[i]
+		
+	}
+	return minScore
+}
+
+
+let minScore = getMinScore(arrScore)
+let statusStuden
+ switch (minScore) {
+	case 1:
+	case 2: statusStuden = 'двійочник'
+		break;
+	case 3:statusStuden = 'трійочник'
+		break;
+	case 4: statusStuden = 'хорошист'
+	break;
+	case 5: statusStuden = 'відмінник'
+	break;
+	default:
+		break;
+ }
+
+ document.write(`Середній бал складає ${midScore} балів <br> Статус учня ${statusStuden}`)
+
+
+</script>
+
+</body>
+</html>

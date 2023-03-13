@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 7</h1>
+	<p>Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+	</p>
+	<ol>
+		<li>за весь рік;</li>
+		<li>у першій половині року;</li>
+		<li>у другій половині року;</li>
+		<li>за літо;</li>
+		<li>за ІІ квартал</li>
+		<li>за парні місяці (з парними номерами);</li>
+		<li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+	</ol>
+	<script>
+		let arrPaysYear = [100,200,500,400,800,300,400,150,600,700,500,100]
+		//знаходимо суму за рік
+		let sumYear = 0
+		for (const iterator of arrPaysYear) {
+			sumYear += iterator
+		}
+		document.write(`Загальна сума за рік складає ${sumYear}`)
+
+
+		// за перше пів року
+		let sumFirstHalfYear = 0
+		for (let i = 0; i < 6 ; i++) {
+			sumFirstHalfYear += arrPaysYear[i]			
+		}
+		document.write(`<br>За перше пів року складає ${sumFirstHalfYear}`)
+
+
+		//за другу пів року
+		let sumSecondHalfYear = 0
+		for (let i = 6; i < 12; i++) {
+			sumSecondHalfYear += arrPaysYear[i]			
+		}
+		document.write(`<br>Сума за друге півріччя складає ${sumSecondHalfYear}`)
+
+
+		//за літо
+
+		let sumSummer = 0
+		for (let i = 5; i < 8; i++) {
+			sumSummer += arrPaysYear[i]			
+		}
+		document.write(`<br>Сума за літо складає ${sumSummer}`)
+
+		// за другий квартал
+		let secondQuarter = 0
+		for (let i = 3; i < 6; i++) {
+			secondQuarter += arrPaysYear[i]
+			
+		}
+document.write(`<br>Сума за другий квартал складає ${secondQuarter}`)
+
+//за парні місяці
+
+let sumEvenMonths = 0
+
+arrPaysYear.forEach((element,index) => {
+	if(index / 2 % !0)
+	sumEvenMonths += arrPaysYear[index]	
+})
+document.write(`<br>Сума за парні місяці складає ${sumEvenMonths}`)
+
+//за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+
+let sumStartSeason = 0
+for (let i = 0; i < arrPaysYear.arrPaysYear; i++) {
+	if(i == 2 || i == 5 || i == 8 || i == 11)
+	sumEvenMonths += arrPaysYear[i]
+}
+document.write(`<br> Сума за місяці, які є початковими у сезоні (весна, літо, осінь, зима). ${sumEvenMonths}`)
+	</script>
+</body>
+</html>
