@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task 1</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>Знайти суми елементів у вказаній області</p>
+	<script>
+		//створюємо двовимірний масив
+		const myArr = [[1,2],[3,4]]
+		//знаходимо суму всіх елементів двовимірного масива
+		const sumMyArr = myArr.reduce((prevTotalSum, elementRow) => prevTotalSum + elementRow.reduce((rowSum, element) => rowSum + element),0)
+		console.log(sumMyArr);
+		
+		//знаходимо суму парних рядках
+		const sumEvenRows = (arr) =>{
+let sumArr = 0
+for (let i = 0; i < arr.length; i++) {
+	if (i % 2 == !0) {
+		for (let j = 0; j < arr[i].length; j++) {
+			sumArr += arr[i][j]			
+		}
+	}	
+}
+return sumArr
+		}
+		console.log(sumEvenRows(myArr))	
+		
+		//знаходимо суму не парних стовпців
+
+		const sumOddRows = (arr) =>{
+let sumArr = 0
+for (let i = 0; i < arr.length; i++) {
+	if (i % 2 == 0) {
+		for (let j = 0; j < arr[i].length; j++) {
+			sumArr += arr[i][j]			
+		}
+	}	
+}
+return sumArr
+		}
+		console.log(sumOddRows(myArr))
+		//знаходимо  суму у парних рядків не парніх стовпців
+
+		const sumEvenRowsOddcolumn = (arr) =>{
+			let sumArr = 0
+			for (let i = 0; i < arr.length; i++) {
+				if(i % 2 ==!0){
+					for (let j = 0; j < arr[i].length; j++) {
+				if(j % 2 == 0){
+sumArr += arr[i][j]
+				}
+				
+					}
+				}
+				
+			}
+			return sumArr
+		}
+		console.log(sumEvenRowsOddcolumn(myArr));
+		//знаходимо суму у не парних рядків  парних стовпців
+		const sumOddRowsEvencolumn = (arr) =>{
+			let sumArr = 0
+			for (let i = 0; i < arr.length; i++) {
+				if(i % 2 ==0){
+					for (let j = 0; j < arr[i].length; j++) {
+				if(j % 2 == !0){
+sumArr += arr[i][j]
+				}
+				
+					}
+				}
+				
+			}
+			return sumArr
+		}
+		console.log(sumOddRowsEvencolumn(myArr));
+		
+	</script>
+</body>
+</html>
