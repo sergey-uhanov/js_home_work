@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування бульбашкою</p>
+	<script>
+		let randomArr = [
+  89, 19, 76, 34, 88, 42, 87, 19, 90, 65, 24, 36, 14, 54, 51, 29, 58, 36, 17, 33, 67, 18, 40, 72,  7, 24, 50, 9, 86, 50
+]
+
+function getBoobleSort(arr) {	
+	let count = 0
+	do {
+		change = false
+		for (let i = 1; i < arr.length ; i++) {
+			if (arr[i - 1] > arr[i]) {
+				[arr[i], arr[i - 1]] = [arr[i - 1], arr[i]]
+				change = true
+				count++
+		}
+		
+		}
+	} while (change);
+	return count
+}
+
+document.write(`Обмінів під час сортування бульбашкою було ${getBoobleSort(randomArr)}`)
+	</script>
+</body>
+</html>
