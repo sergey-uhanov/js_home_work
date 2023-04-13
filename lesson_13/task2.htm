@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 2</h1>
+	<p> Нехай <img src="./img/1.jpg" alt=""> , де . Визначити . Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+</p>
+<script>
+	// рекурсия
+	function getX_n(i) {
+		if(i < 2) return 1
+		else{
+			return getX_n(i - 1) + 2 * getX_n(i - 2)
+			
+		}
+	}
+	console.log(getX_n(5));
+
+	//не рекурсия
+
+	function getXNoRe(n) {
+		let result 
+		let temp = 1
+		let temp0 = 1  
+		for (let i = 2; i <= n; i++){
+			result = temp + 2 * temp0
+			temp0 = temp
+			temp = result
+			
+		
+		}
+	
+		return result
+	}
+	console.log(getXNoRe(5));
+	
+	
+	
+</script>
+</body>
+</html>

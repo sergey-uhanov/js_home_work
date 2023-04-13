@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+		<p>
+		 Нехай <img src="./img/2.jpg" alt="">Визначити  Х<sup><small>10</small></sup>. Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+	</p>
+	<script>
+		// рекурсивный способ
+		function x(i) {
+			if(i === 1) return 2
+			else{				
+					return x(i - 1) + (2 * i)					
+				}
+			}	
+		console.log(x(10));
+
+		// не рекурсивный метод
+		function y(i) {
+			resY = 0
+			for (let j = 0; j <= i; j++) {
+				resY +=  2*j
+				
+			}
+			return resY
+		}
+		console.log(y(10));
+		
+
+
+	</script>
+</body>
+</html>

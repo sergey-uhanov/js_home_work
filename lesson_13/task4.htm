@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 4</h1>
+	<p>  З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими викликами видавати по одну букву наперед
+		 заданого слова. З використанням нього розробити гру «Прекладач». Виводимо для користувача опис цього слова і по одну букву користувач вводить 
+		 переклад цього слова. Підрахувати кількість вгаданих букв.
+	</p>
+
+	<h2>Загадане слово</h2>
+	<p>Це слово описує концепцію існування, яка може бути фізичною, психологічною та емоційною. 
+		Загадане слово може бути сповнене різних переживань, включно з радістю, смутком, любов'ю, розчаруванням тощо.</p>
+
+</body>
+	<script>
+		alert('Почати гру якщо прочитали опис загаданого слова')
+		function exFun(iter) {
+			let count = iter
+			function inFun() {
+				return count++
+			}
+			return inFun
+		}
+		const targetWord = 'життя'
+		let iterator = exFun(0)
+
+		for (let i = 1; i <= targetWord.length; i++) {
+		alert('Відкрити наступну букву?')
+		alert(`Буква за номером ${i} це '${targetWord[iterator()]}'`)
+	
+}
+
+
+
+
+
+	</script>
+</html>
+
+	
+
+
+
