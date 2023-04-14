@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 2</h1>
+	<p>Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N місяців.</p>
+
+
+	<script>
+		let myData = {
+			day: 29,
+			month: 7,
+			year: 1991,
+		}
+
+		function getNData(object, UserStepMonth) {
+			 
+			 return object.year + Math.floor(UserStepMonth/12)
+			 }
+			 
+		
+let userNmonth = parseInt(prompt('Веедіть кількість місяців'))
+		 console.log( `Рік який буде через N місяців ${getNData(myData, userNmonth)}`);
+		 
+		 
+	</script>
+</body>
+</html>

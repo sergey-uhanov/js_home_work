@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>Описати масив об’єктів – сайтів розроблених компанією з такими властивостями</p>
+	<p>----- Властивості ------</p>
+	<ul>
+		<li>власник компанії</li>
+		<li>споснсори (масив спонсорів)
+			<ul>
+				<li>прізвище спонсора</li>
+				<li>ім’я  спонсора</li>
+				<li>сума вкладень спонсора</li>
+			</ul>
+		</li>
+		<li>рік випуску</li>
+		<li>вартість сайту</li>
+	</ul>
+
+	<script>
+		let websites = [
+  {
+    companyName: "WebDev Inc",
+    companyOwner: "John Smith",
+    sponsors: [
+      { lastName: "Johnson", firstName: "Mark", investment: 10000 },
+      { lastName: "Smith", firstName: "Mary", investment: 5000 }
+    ],
+    yearReleased: 2021,
+    siteCost: 15000
+  },
+  {
+    companyName: "TechSites LLC",
+    companyOwner: "Jane Doe",
+    sponsors: [
+      { lastName: "Brown", firstName: "David", investment: 12000 },
+      { lastName: "White", firstName: "Susan", investment: 8000 },
+      { lastName: "Garcia", firstName: "Miguel", investment: 5000 }
+    ],
+    yearReleased: 2005,
+    siteCost: 20000
+  },
+  {
+    companyName: "Creative Designs Co",
+    companyOwner: "Adam Johnson",
+    sponsors: [
+      { lastName: "Lee", firstName: "Emily", investment: 9000 },
+      { lastName: "Allen", firstName: "Daniel", investment: 7000 }
+    ],
+    yearReleased: 2022,
+    siteCost: 180000
+  },
+  {
+    companyName: "CodeGenius Inc",
+    companyOwner: "Michael Brown",
+    sponsors: [
+      { lastName: "Robinson", firstName: "Kim", investment: 15000 }
+    ],
+    yearReleased: 2019,
+    siteCost: 25000
+  },
+  {
+    companyName: "WebSolutions LLC",
+    companyOwner: "Sara Martinez",
+    sponsors: [
+      { lastName: "Rodriguez", firstName: "Carlos", investment: 10000 },
+      { lastName: "Taylor", firstName: "Laura", investment: 6000 },
+      { lastName: "Moore", firstName: "Diana", investment: 3000 }
+    ],
+    yearReleased: 2003,
+    siteCost: 220000
+  },
+  {
+    companyName: "Digital Minds Co",
+    companyOwner: "Alexis Rodriguez",
+    sponsors: [
+      { lastName: "Hernandez", firstName: "Maria", investment: 8000 },
+      { lastName: "Gonzalez", firstName: "Juan", investment: 4000 }
+    ],
+    yearReleased: 2021,
+    siteCost: 17000
+  }
+]
+// 1 Знаходимо вартість всіх сайтів
+
+let sumAllSite = websites.reduce((sumAll, objectEl) => sumAll + objectEl.siteCost ,0)
+
+console.log(` сума всіх зайтів ${sumAllSite}`);
+
+//2) кількість сайтів, що було зроблено між 2000 та 2009 рр.
+
+let quantitySiteMadeBetween2000And2009 = websites.reduce((quantitySite, objectEl) => {
+  if (objectEl.yearReleased >= 2000 && objectEl.yearReleased <= 2009) {
+    quantitySite++;
+  }
+  return quantitySite;
+}, 0);
+console.log(`кількість сайтів, що було зроблено між 2000 та 2009 рр. ${quantitySiteMadeBetween2000And2009}`)
+
+
+// 3 кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+
+let siteCostMore100000 = 0
+
+for (const iterator of websites) {
+	if (iterator.siteCost > 100000) {
+		siteCostMore100000++
+	}
+}
+console.log(`кількість сайтів, де сума спонсорських вкладень була більшою за 100000 ${siteCostMore100000 }`)
+
+// 4 створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+
+let arrAllSponsors = []
+
+for (const iterator of websites) {
+	arrAllSponsors.push(iterator.sponsors)	
+}
+
+console.log(`список усіх спонсорів ${arrAllSponsors}`);
+console.log(arrAllSponsors);
+
+// 5 знайти рік, коли прибуток був найбільшим
+
+let yearWithMoreProfit = websites.reduce((bigestEl, element) => 
+	element.siteCost > bigestEl.siteCost ? bigestEl = element : bigestEl	
+)
+ console.log(`рік, коли прибуток був найбільшим ${yearWithMoreProfit.yearReleased}`);
+
+ //7 упорядкувати список за спаданням прибутку
+ 
+
+	</script>
+</body>
+</html>
