@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>task 1</title>
+  </head>
+  <body>
+    <h1>Задача №1</h1>
+    <p>Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.</p>
+
+    <script>
+      // створюємо об'єкт за допомогою функції конструктор
+      let myArr = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+      function ShootingRange(arr) {
+        this.fildWithRabits = arr
+      }
+      ShootingRange.prototype.isShotHitTarget = function (value) {
+        return this.fildWithRabits[value] == 1 ? true : false
+      }
+      let a = new ShootingRange(myArr)
+      console.log(a)
+
+      //створюємо об'єкт за допомогою класу
+
+      class ShootingGallery {
+        constructor(arr) {
+          this.fildWithRabit = arr
+        }
+        isShotHitTarget(value) {
+          return this.fildWithRabits[value] == 1 ? true : false
+        }
+      }
+
+      let b = new ShootingGallery(myArr)
+      console.log(b)
+    </script>
+  </body>
+</html>

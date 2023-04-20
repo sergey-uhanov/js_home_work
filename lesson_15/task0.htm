@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача №0</h1>
+    <p>
+      Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, а у
+      іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням.
+      Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
+    </p>
+    <script>
+      // створюємо два об'екта
+      let obj1 = {
+        nums: [1, 3, 5, 7],
+        myFun: function () {
+          let sum = 0
+          for (const iterator of this.nums) {
+            sum += iterator
+          }
+          return sum
+        },
+        toString: function () {
+          return this.myFun()
+        },
+        valueOf: function (params) {
+          return this.myFun()
+        },
+      }
+
+      let obj2 = {
+        nums: [2, 4, 6, 8, 10],
+        myFun: function (minValue, maxValue) {
+          let product = 1
+          for (const iterator of this.nums) {
+            if (iterator > minValue && iterator < maxValue) {
+              product *= iterator
+            }
+          }
+          return product
+        },
+        toString: function () {
+          return this.myFun(1, 9)
+        },
+      }
+
+      // використовуваємо метод call
+
+      let a = obj1.myFun.call(obj2)
+      document.write(`a${a} <br>`)
+      let b = obj2.myFun.call(obj1, 2, 9)
+      document.write(`b${b} <br>`)
+
+      // використовуваємо метод apply
+      let c = obj1.myFun.apply(obj2)
+      document.write(`c${c} <br>`)
+
+      let e = obj2.myFun.apply(obj1, [2, 9])
+      document.write(`e${e} <br>`)
+    </script>
+  </body>
+</html>

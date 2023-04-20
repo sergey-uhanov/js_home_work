@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача №4</h1>
+    <p>Розробити клас Baner</p>
+    <script>
+      class baner {
+        constructor() {
+          this.arrObj = [
+            {
+              img: '<img src="./img/1.webp" alt="">',
+              url: '<a href="https://www.google.com.ua/">https://www.google.com.ua/</a>',
+            },
+            {
+              img: '<img src="./img/2.webp" alt="">',
+              url: '<a href="https://www.youtube.com/">https://www.youtube.com/</a>',
+            },
+            {
+              img: '<img src="./img/3.webp" alt="">',
+              url: '<a href="https://chat.openai.com/">https://chat.openai.com/</a>',
+            },
+            { img: '<img src="./img/4.webp" alt="">', url: '<a href="hhttps://github.com/">hhttps://github.com/</a>' },
+          ]
+        }
+        getRandomObj(minvalue, arr) {
+          const min = minvalue
+          const max = arr.length - 1
+          const random = min + Math.floor(Math.random() * (max - min + 1))
+          console.log(random)
+
+          return random
+        }
+
+        getOutputObj(value) {
+          return document.write(this.arrObj[value].img, this.arrObj[value].url)
+        }
+      }
+      let myObj = new baner()
+
+      myObj.getOutputObj(myObj.getRandomObj(0, myObj.arrObj))
+    </script>
+  </body>
+</html>

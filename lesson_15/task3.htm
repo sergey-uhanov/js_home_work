@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача №3</h1>
+    <p>Розробити клас MultChecker для перевірки таблиці множення</p>
+    <script>
+      class MultChecker {
+        constructor() {
+          this.num = 7
+          this.numCorrectAnswers = 0
+          this.numberIncorrectAnswers = 0
+        }
+        generateExample() {
+          const random = Math.floor(Math.random() * 9)
+          return [random, this.num]
+        }
+        checkingCorrectnessAnswer(arr) {
+          const userAnswer = parseInt(prompt(`Скільки буде ${arr[0]} * ${arr[1]} `))
+          if (arr[0] * arr[1] === userAnswer) this.numCorrectAnswers++
+          else this.numberIncorrectAnswers++
+        }
+        render() {
+          document.write(`кількість правильніх відповідей ${this.numCorrectAnswers}`)
+          document.write(`<br>кількість не правильніх відповідей ${this.numberIncorrectAnswers}`)
+        }
+      }
+      let a = new MultChecker()
+      console.log(a)
+
+      a.checkingCorrectnessAnswer(a.generateExample())
+      a.checkingCorrectnessAnswer(a.generateExample())
+      a.checkingCorrectnessAnswer(a.generateExample())
+      a.checkingCorrectnessAnswer(a.generateExample())
+      a.checkingCorrectnessAnswer(a.generateExample())
+      a.render()
+    </script>
+  </body>
+</html>

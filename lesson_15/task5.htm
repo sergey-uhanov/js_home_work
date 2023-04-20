@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <h1>Задача №5</h1>
+    <p>Розробити клас «Керівник танців»</p>
+    <script>
+      class DanceDirector {
+        constructor() {
+          this.boysNames = [
+            "William",
+            "James",
+            "Oliver",
+            "Ethan",
+            "Benjamin",
+            "Mason",
+            "Lucas",
+            "Logan",
+            "Noah",
+            "Jackson",
+          ]
+          this.girlNames = [
+            "Sophia",
+            "Emma",
+            "Olivia",
+            "Ava",
+            "Isabella",
+            "Mia",
+            "Amelia",
+            "Charlotte",
+            "Harper",
+            "Evelyn",
+          ]
+        }
+        getRandomNameBoy() {
+          const min = 0
+          const max = this.boysNames.length - 1
+          const random = min + Math.floor(Math.random() * (max - min + 1))
+          return this.boysNames[random]
+        }
+        getRandomNameGirl() {
+          const min = 0
+          const max = this.girlNames.length - 1
+          const random = min + Math.floor(Math.random() * (max - min + 1))
+          return this.girlNames[random]
+        }
+        getCoupleDance() {
+          return [this.getRandomNameGirl(), this.getRandomNameBoy()]
+        }
+        run() {
+          return setInterval(() => console.log(myObj.getCoupleDance()), 5000)
+        }
+      }
+
+      let myObj = new DanceDirector()
+      console.log(myObj.getRandomNameBoy())
+      console.log(myObj.getRandomNameGirl())
+      console.log(myObj.getCoupleDance())
+      let a = myObj.run()
+    </script>
+  </body>
+</html>
