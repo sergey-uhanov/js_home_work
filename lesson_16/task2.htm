@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 2</h1>
+    <p>
+      Створити клас TMoney для роботи з грошовими сумами. Сума повинна зберігатися у вигляді доларового еквіваленту.
+      Реалізувати методи додавання/вилучення грошової маси, вказуючи необхідну суму у гривнях, та визначення курсу
+      долара, при якому сума у гривнях збільшиться на 100. Курс долара зберігати в окремому полі.
+    </p>
+    <script>
+      class TMoney {
+        #Money = 0
+        #Cours = 37.5
+        constructor() {}
+
+        get QuantityMoney() {
+          return this.#Money
+        }
+        get CoursDollGriv() {
+          return this.#Cours
+        }
+
+        getCurseDolGri(valueAddGriv) {
+          return valueAddGriv / this.#Cours
+        }
+
+        set QuantityMoney(value) {
+          if (value > 0) {
+            this.#Money += this.getCurseDolGri(value)
+          } else {
+            this.#Money -= this.getCurseDolGri(-value)
+          }
+        }
+
+        set Cours(value) {
+          if (value < 0) {
+            throw new Error("cours is incorrect")
+          }
+          this.#Cours = value
+        }
+        toString() {
+          return `${this.#Money}$`
+        }
+      }
+
+      let test1 = new TMoney()
+      console.log(test1.QuantityMoney)
+      test1.QuantityMoney = 1000
+      console.log(test1.QuantityMoney)
+      test1.QuantityMoney = -500
+      console.log(test1.QuantityMoney)
+      console.log(test1.CoursDollGriv)
+      test1.Cours = 25
+      console.log(test1.CoursDollGriv)
+      test1.QuantityMoney = 100
+    </script>
+  </body>
+</html>

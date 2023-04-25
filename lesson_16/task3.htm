@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+    <style>
+      .branch-in-city {
+        margin: 50px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Задача 3</h1>
+    <img src="./img/2.jpg" alt="" />
+    <div class="age-company" id="ageCompany"></div>
+    <div class="branch-in-city" id="branchInCity">
+      <input type="text" id="userCity" />
+      <label for="userCity">Вкажіть місто</label>
+      <button onclick="showBranchInUserCyti()">опрацювати</button>
+      <div class="adres" id="outPutAdres"></div>
+    </div>
+    <div class="show-service-user-price">
+      <input type="text" id="userQuatityMoney" />
+      <label for="userQuatityMoney">Вкажіть суму грошей</label>
+      <button onclick="showService()">Опрацювати</button>
+      <div class="service-result" id="service-result"></div>
+    </div>
+    <script>
+      class Company {
+        #NameCompany
+        #DateFoundation
+        #Service
+        #BranchAddress
+        constructor(nameCompany, foundationMonth, foundationYear) {
+          this.#NameCompany = nameCompany
+          this.#DateFoundation = { month: foundationMonth, year: foundationYear }
+          this.#Service = []
+          this.#BranchAddress = []
+        }
+        set Service(obj) {
+          this.#Service.push(obj)
+        }
+        get Service() {
+          return this.#Service
+        }
+        get BranchAddress() {
+          return this.#BranchAddress
+        }
+        set BranchAddress(obj) {
+          this.#BranchAddress.push(obj)
+        }
+        get Age() {
+          return parseInt(this.#DateFoundation.year)
+        }
+        toString() {
+          return `${this.#NameCompany}  ${this.#DateFoundation} ${this.servise}`
+        }
+      }
+      class Service {
+        #NameService
+        #PriceService
+        #Deadline
+        constructor(name, price, deadlineDay) {
+          this.#NameService = name
+          this.#PriceService = price
+          this.#Deadline = deadlineDay
+        }
+        get NameService() {
+          return this.#NameService
+        }
+        get PriceService() {
+          return this.#PriceService
+        }
+        get Deadline() {
+          return this.#Deadline
+        }
+        toString() {
+          return `Name service ${this.#NameService}, Price service: ${this.#PriceService},Deadline: ${this.#Deadline}`
+        }
+      }
+      class BranchAddress {
+        constructor(country, city, street, buildingNumber) {
+          this.country = country
+          this.city = city
+          this.street = street
+          this.buildingNumber = buildingNumber
+        }
+        toString() {
+          return `Країна -${this.country},Місто - ${this.city}, Вулиця - ${this.street},Номер будинку -  ${this.buildingNumber}`
+        }
+      }
+
+      let adress1 = new BranchAddress("Україна", "Харків", "Отакара Яроша", 25)
+      let adress2 = new BranchAddress("Україна", "Харків", "23 Серпня", 165)
+      let adress3 = new BranchAddress("Україна", "Харків", "Сумськая", 15)
+      let servise1 = new Service("Чистка коврів", 356, 30)
+      let servise2 = new Service("Знос будівель", 3434, 76)
+      let servise3 = new Service("Покраска будівель", 3654, 22)
+      let company1 = new Company("horn and hooves", 7, 1991)
+
+      company1.Service = servise1
+      company1.Service = servise2
+      company1.Service = servise3
+
+      company1.BranchAddress = adress1
+      company1.BranchAddress = adress2
+      company1.BranchAddress = adress3
+      console.log(company1)
+
+      let ageCompany = 2023 - company1.Age
+
+      let companyAge = document.getElementById("ageCompany")
+      companyAge.innerText = ` Кількість років існуванню компанії становить ${ageCompany} роки `
+      console.log(company1.BranchAddress[0].BranchAddress)
+
+      function showBranchInUserCyti() {
+        let userCity = document.getElementById("userCity").value
+        let adresOutput = document.getElementById("outPutAdres")
+        let result = ""
+        for (let i = 0; i < company1.BranchAddress.length; i++) {
+          if (userCity == company1.BranchAddress[i].city) {
+            result += `${company1.BranchAddress[i]} \n`
+          }
+          adresOutput.innerText = `${result} `
+        }
+      }
+      function showService() {
+        let userPrice = document.getElementById("userQuatityMoney").value
+        let result = document.getElementById("service-result")
+        let item = ""
+        console.log(company1.Service[0])
+
+        for (let i = 0; i < company1.Service.length; i++) {
+          if (userPrice >= company1.Service[i].PriceService) {
+            item += ` ${company1.Service[i].NameService} - термін виконаня ${company1.Service[i].Deadline} днів ,`
+          }
+          result.innerText = item
+        }
+      }
+    </script>
+  </body>
+</html>

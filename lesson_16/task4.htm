@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 4</h1>
+    <p>
+      Створити клас TBankomat, який моделює роботу банкомата. Клас повинен містити поля для зберігання кількості купюр
+      кожного із номіналів від 5 до 200 гривень. Реалізувати методи знаходження максимальної та мінімальної сум, які
+      може видати банкомат, та метод зняття деякої суми
+    </p>
+    <script>
+      class TBankomat {
+        #quantity5griven
+        #quantity10griven
+        #quantity20griven
+        #quantity50griven
+        #quantity100griven
+        #quantity200griven
+        #quantity500griven
+        constructor(numBills5, numBills10, numBills20, numBills50, numBills100, numBills200, numBills500) {
+          this.#quantity5griven = numBills5
+          this.#quantity10griven = numBills10
+          this.#quantity20griven = numBills20
+          this.#quantity50griven = numBills50
+          this.#quantity100griven = numBills100
+          this.#quantity200griven = numBills200
+          this.#quantity500griven = numBills500
+        }
+        get quantity5griven() {
+          return this.#quantity5griven
+        }
+        get quantity10griven() {
+          return this.#quantity10griven
+        }
+        get quantity20griven() {
+          return this.#quantity20griven
+        }
+        get quantity50griven() {
+          return this.quantity50griven
+        }
+        get quantity100griven() {
+          return this.quantity100griven
+        }
+        get quantity200griven() {
+          return this.quantity200griven
+        }
+        get quantity500griven() {
+          return this.quantity500griven
+        }
+        set Quantity5griven(value) {
+          this.#quantity5griven += value
+        }
+
+        set Quantity10griven(value) {
+          this.#quantity10griven += value
+        }
+        set Quantity20griven(value) {
+          this.#quantity20griven += value
+        }
+        set Quantity50griven(value) {
+          this.#quantity50griven += value
+        }
+        set Quantity100griven(value) {
+          this.#quantity100griven += value
+        }
+        set Quantity200griven(value) {
+          this.#quantity200griven += value
+        }
+        set Quantity500griven(value) {
+          this.#quantity500griven += value
+        }
+        get AllMoney() {
+          return (
+            this.#quantity5griven * 5 +
+            this.#quantity10griven * 10 +
+            this.#quantity20griven * 20 +
+            this.#quantity50griven * 50 +
+            this.#quantity100griven * 100 +
+            this.#quantity200griven * 200 +
+            this.#quantity500griven * 500
+          )
+        }
+        toString() {
+          return `Банкнот  наміналом 5 - ${this.#quantity5griven} шт.,Банкнот  наміналом 10 - ${
+            this.#quantity10griven
+          } шт.,            Банкнот  наміналом 20 - ${this.#quantity20griven} шт.,Банкнот  наміналом 50 - ${
+            this.#quantity50griven
+          } шт.,            Банкнот  наміналом 100 - ${this.#quantity100griven} шт.,Банкнот  наміналом 200 - ${
+            this.#quantity200griven
+          } шт., Банкнот  наміналом 500 - ${this.#quantity500griven} шт. Загалом ${this.AllMoney} гривень`
+        }
+      }
+
+      let bankomat = new TBankomat(1, 1, 1, 1, 1, 1, 1)
+      document.write(bankomat)
+    </script>
+  </body>
+</html>
